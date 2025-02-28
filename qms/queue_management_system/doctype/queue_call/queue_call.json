@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:QC-{###}",
+ "creation": "2025-02-28 10:45:28.387134",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ticket_number",
+  "called_time",
+  "column_break_ryjh",
+  "audio_file"
+ ],
+ "fields": [
+  {
+   "fieldname": "ticket_number",
+   "fieldtype": "Link",
+   "label": "Ticket Number",
+   "options": "Queue"
+  },
+  {
+   "fieldname": "called_time",
+   "fieldtype": "Datetime",
+   "label": "Called Time"
+  },
+  {
+   "fieldname": "column_break_ryjh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "audio_file",
+   "fieldtype": "Attach",
+   "label": "Audio file"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-28 12:22:42.826571",
+ "modified_by": "Administrator",
+ "module": "Queue Management System",
+ "name": "Queue Call",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

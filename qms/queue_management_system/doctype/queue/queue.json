@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:ticket_number",
+ "creation": "2025-02-28 10:32:55.045147",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_x6xs",
+  "ticket_number",
+  "customer_name",
+  "customer_phone",
+  "amended_from",
+  "column_break_pgyu",
+  "status",
+  "service",
+  "assigned_office"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_x6xs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Queue",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "ticket_number",
+   "fieldtype": "Data",
+   "label": "Ticket Number",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_phone",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "label": "Customer Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Service",
+   "options": "Service",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Waiting\nServing\nCompleted\nCanceled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pgyu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assigned_office",
+   "fieldtype": "Link",
+   "label": "Assigned Office",
+   "options": "Office",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-28 10:56:32.762775",
+ "modified_by": "Administrator",
+ "module": "Queue Management System",
+ "name": "Queue",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
