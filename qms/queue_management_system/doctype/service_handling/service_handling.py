@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class QueueHandling(Document):
+class ServiceHandling(Document):
 	pass

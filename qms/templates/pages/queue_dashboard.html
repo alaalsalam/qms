@@ -1,0 +1,13 @@
+<div id="now_serving">
+	<h2>Now Serving Ticket Number: <span id="current_ticket"></span></h2>
+	<audio id="ticket_audio" controls></audio>
+</div>
+
+<script>
+	frappe.realtime.on("queue_call", function (data) {
+		document.getElementById("current_ticket").innerText = data.ticket_number;
+		let audio = document.getElementById("ticket_audio");
+		audio.src = data.audio_file;
+		audio.play();
+	});
+</script>

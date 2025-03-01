@@ -12,18 +12,18 @@ EXTRA_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 IGNORE_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 
 
-class UnitTestQueueHandling(UnitTestCase):
+class UnitTestServiceHandling(UnitTestCase):
 	"""
-	Unit tests for QueueHandling.
+	Unit tests for ServiceHandling.
 	Use this class for testing individual functions and methods.
 	"""
 
 	pass
 
 
-class IntegrationTestQueueHandling(IntegrationTestCase):
+class IntegrationTestServiceHandling(IntegrationTestCase):
 	"""
-	Integration tests for QueueHandling.
+	Integration tests for ServiceHandling.
 	Use this class for testing interactions between multiple components.
 	"""
 

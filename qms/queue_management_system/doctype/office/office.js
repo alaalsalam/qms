@@ -7,7 +7,8 @@ frappe.ui.form.on('Office', {
             frappe.call({
                 method: 'qms.queue_management_system.doctype.office.office.call_next',
                 args: {
-                    service: frm.doc.service
+                    service: frm.doc.service,
+                    name: frm.doc.name
                 },
                 callback: function(r) {
                     if (r.message) {

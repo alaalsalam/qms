@@ -45,7 +45,7 @@
  "modified": "2025-02-28 10:50:18.820651",
  "modified_by": "Administrator",
  "module": "Queue Management System",
- "name": "Queue Handling",
+ "name": "Service Handling",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
