@@ -6,14 +6,14 @@ class Office(Document):
     pass
 
 @frappe.whitelist()
-def call_next(service, name):
+def call_next(service, name=None):
     next_ticket = frappe.get_all("Queue", filters={"service": service, "status": "Waiting"}, fields=["name", "ticket_number"], order_by="creation asc", limit=1)
 
     # Create Queue Call
     if next_ticket:
         ticket = next_ticket[0]
         queue_call = frappe.new_doc("Queue Call")
-        queue_call.ticket_number = ticket.name
+        queue_call.ticket_number = ticket.ticket_number
         queue_call.called_time = frappe.utils.now()
         queue_call.assigned_office = name
         queue_call.save()
@@ -31,8 +31,11 @@ def call_next(service, name):
         audio_path = f"/private/files/{ticket.ticket_number}.mp3"
         tts.save(f"{frappe.utils.get_site_path()}{audio_path}")
 
+        
+
         # Save audio file path to Queue Call
         queue_call.audio_file = audio_path
+        queue_call.is_private = 0
         queue_call.save()
 
         # Notify via WebSocket

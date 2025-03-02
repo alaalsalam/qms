@@ -64,7 +64,7 @@ function fetch_queue_call_data() {
 					queue_list_body.innerHTML += `
                         <tr>
                             <td>${ticket.ticket_number}</td>
-                            <td>${ticket.assigned_office}</td>
+                            <td>${ticket.assigned_office}</td>cle
                         </tr>
                     `;
 				});

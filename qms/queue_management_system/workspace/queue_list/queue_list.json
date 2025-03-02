@@ -1,0 +1,37 @@
+{
+ "app": "qms",
+ "charts": [],
+ "content": "[{\"id\":\"0qiNga7cY4\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Queue List\",\"col\":12}}]",
+ "creation": "2025-03-01 12:28:16.518308",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Queue List",
+   "label": "Queue List"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "mark-as-read",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Queue List",
+ "link_type": "DocType",
+ "links": [],
+ "modified": "2025-03-01 12:35:26.578886",
+ "modified_by": "lijsamuael@gmail.com",
+ "module": "Queue Management System",
+ "name": "Queue List",
+ "number_cards": [],
+ "owner": "lijsamuael@gmail.com",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 23.0,
+ "shortcuts": [],
+ "title": "Queue List",
+ "type": "Workspace"
+}

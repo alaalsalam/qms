@@ -11,7 +11,7 @@ class Queue(Document):
         self.set_ticket_number()
 
         # Assign an available office that provides the same service
-        self.assign_available_office()
+        # self.assign_available_office()
 
     def set_ticket_number(self):
         # Get the last ticket number for the service
