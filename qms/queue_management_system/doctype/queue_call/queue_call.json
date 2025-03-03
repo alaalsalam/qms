@@ -8,6 +8,7 @@
  "field_order": [
   "ticket_number",
   "called_time",
+  "number_of_calls",
   "column_break_ryjh",
   "audio_file",
   "assigned_office"
@@ -38,11 +39,16 @@
    "fieldtype": "Link",
    "label": "Assigned Office",
    "options": "Office"
+  },
+  {
+   "fieldname": "number_of_calls",
+   "fieldtype": "Int",
+   "label": "Number of calls"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-01 10:53:44.288223",
+ "modified": "2025-03-03 09:35:38.268241",
  "modified_by": "Administrator",
  "module": "Queue Management System",
  "name": "Queue Call",

@@ -12,8 +12,8 @@
   "ticket_number",
   "customer_name",
   "customer_phone",
-  "calling_status",
-  "call_time",
+  "called_time",
+  "completed_at",
   "column_break_pgyu",
   "amended_from",
   "status",
@@ -89,19 +89,6 @@
    "label": "Remark"
   },
   {
-   "default": "0",
-   "fieldname": "calling_status",
-   "fieldtype": "Check",
-   "label": "Calling Status",
-   "read_only": 1
-  },
-  {
-   "depends_on": "eval:doc.calling_status == 1",
-   "fieldname": "call_time",
-   "fieldtype": "Time",
-   "label": "Call Time"
-  },
-  {
    "fieldname": "assigned_user",
    "fieldtype": "Link",
    "label": "Assigned User",
@@ -116,11 +103,23 @@
    "fieldname": "time",
    "fieldtype": "Time",
    "label": "Time"
+  },
+  {
+   "depends_on": "eval:doc.status == \"Called\"",
+   "fieldname": "called_time",
+   "fieldtype": "Time",
+   "label": "Called Time"
+  },
+  {
+   "fieldname": "completed_at",
+   "fieldtype": "Time",
+   "label": "Completed at",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-03 01:11:10.482878",
+ "modified": "2025-03-03 10:21:11.704662",
  "modified_by": "Administrator",
  "module": "Queue Management System",
  "name": "Queue",

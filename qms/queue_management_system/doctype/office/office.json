@@ -9,6 +9,7 @@
   "office_name",
   "service",
   "column_break_tuzn",
+  "assigned_ticket",
   "status"
  ],
  "fields": [
@@ -33,11 +34,17 @@
   {
    "fieldname": "column_break_tuzn",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assigned_ticket",
+   "fieldtype": "Link",
+   "label": "Current Assigned Ticket",
+   "options": "Queue"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-28 11:10:01.754260",
+ "modified": "2025-03-03 10:31:46.784109",
  "modified_by": "Administrator",
  "module": "Queue Management System",
  "name": "Office",
@@ -57,6 +64,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": []
