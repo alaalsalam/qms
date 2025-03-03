@@ -19,7 +19,7 @@ async function printTicket(frm) {
 	let siteUrl = window.location.origin; // This will get the current site URL (e.g., https://yourdomain.com)
 
 	// Generate a QR code using the site URL and ticket number
-	let qrCodeData = `${siteUrl}/app/queue/${frm.doc.name}`;
+	let qrCodeData = `${siteUrl}/ticket/${frm.doc.name}`;
 	let qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(
 		qrCodeData
 	)}`;
