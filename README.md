@@ -4,7 +4,7 @@ Apologies for missing that! Here's the updated README with a project description
 
 ### Queue Management System
 
-The Queue Management System (QMS) is an application built on the Frappe framework that helps manage queues in various departments. It allows real-time updates for users, ensuring smooth queue management and enhancing user experience. The system displays the list of queues for each department and plays an audio file whenever a queue is called. 
+The Queue Management System (QMS) is an application built on the Frappe framework that helps manage queues in various departments. It allows real-time updates for users as well as plays an audio file whenever a queue is called, ensuring smooth queue management and enhancing user experience. The system displays the list of queues in each day and for each department and provides a real-time update on the screen. 
 
 #### Key Features:
 - **Real-time updates** for all users across the system.
