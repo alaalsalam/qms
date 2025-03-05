@@ -1,5 +1,4 @@
-This is repo is open for collaboration, let us make it together and make robust Queue Management System:
-
+This is repo is open for collaboration, let us make it together.
 ---
 
 ### Queue Management System
@@ -15,15 +14,19 @@ The Queue Management System (QMS) is an application built on the Frappe framewor
 #### Screenshots
 
 1. **Workspace**:
+   
    ![Workspace](https://github.com/user-attachments/assets/41890417-b695-46ce-981c-0ab3bd11dd83)
 
 2. **List of Queues in Each Department with Realtime Update**:
+   
    ![List of Queues](https://github.com/user-attachments/assets/e43ace16-1d29-4cdc-808c-e257c702701b)
 
 3. **Queue Call with Audio Attached**:
+   
    ![Queue Call](https://github.com/user-attachments/assets/fa74fef6-e7ab-41e8-817b-a7a9d93183cf)
 
 4. **Realtime Update on Screen  with additional Audio functionality**:
+   
    ![Realtime Update](https://github.com/user-attachments/assets/51491c58-db34-4e0b-88be-1eb4102333f3)
 
 ### Installation
@@ -62,7 +65,3 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 ### License
 
 MIT
-
----
-
-This README now includes a project description along with the relevant details about the features and functionality of the Queue Management System.
