@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "ticket_number",
+  "ticket_id",
   "called_time",
   "number_of_calls",
   "column_break_ryjh",
@@ -16,9 +17,8 @@
  "fields": [
   {
    "fieldname": "ticket_number",
-   "fieldtype": "Link",
-   "label": "Ticket Number",
-   "options": "Queue"
+   "fieldtype": "Data",
+   "label": "Ticket Number"
   },
   {
    "fieldname": "called_time",
@@ -44,11 +44,17 @@
    "fieldtype": "Link",
    "label": "Department",
    "options": "Departmennt"
+  },
+  {
+   "fieldname": "ticket_id",
+   "fieldtype": "Link",
+   "label": "Ticket Id",
+   "options": "Queue"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-04 17:39:28.783768",
+ "modified": "2025-03-05 11:54:30.302273",
  "modified_by": "Administrator",
  "module": "Queue Management System",
  "name": "Queue Call",

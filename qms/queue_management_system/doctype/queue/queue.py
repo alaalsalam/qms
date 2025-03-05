@@ -98,9 +98,14 @@ def handle_action(action, ticket_number, remark):
 @frappe.whitelist()
 def call(department, name):
 
+    #Get department info
+    dpt = frappe.get_doc("Departmennt", department)
+    ticket = frappe.get_doc("Queue", name)
+
     # Create Queue Call
     queue_call = frappe.new_doc("Queue Call")
-    queue_call.ticket_number = name
+    queue_call.ticket_id = name
+    queue_call.ticket_number = ticket.ticket_number
     queue_call.called_time = frappe.utils.now()
     queue_call.department = department
     queue_call.save()
@@ -109,9 +114,7 @@ def call(department, name):
     frappe.db.set_value("Queue", name, "status", "Called")
     frappe.db.set_value("Queue", name, "called_time", frappe.utils.now())
 
-    #Get department info
-    dpt = frappe.get_doc("Departmennt", department)
-    ticket = frappe.get_doc("Queue", name)
+
 
     # Generate audio file
     tts = gTTS(text=f"Ticket number {ticket.ticket_number} please proceed to office number {dpt.office_number}", lang='en')
@@ -139,16 +142,16 @@ def call(department, name):
     frappe.publish_realtime(
     event="queue_call",
         message={
-            "ticket_number": name,
+            "ticket_number": ticket.ticket_number,
             "audio_file": queue_call.audio_file,
-            "assigned_office": queue_call.department,
+            "department": ticket.department,
         },
     )    
     frappe.publish_realtime(
         event="queue_list",
         message={
-            "ticket_number": name,
-            "assigned_office": queue_call.department,
+            "ticket_number": ticket.ticket_number,
+            "department": ticket.department,
         },
     )
 
