@@ -1,4 +1,4 @@
-Apologies for missing that! Here's the updated README with a project description added:
+This is repo is open for collaboration, let us make it together and make robust Queue Management System:
 
 ---
 
