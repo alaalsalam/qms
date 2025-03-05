@@ -1,13 +1,27 @@
-<div id="now_serving">
-	<h2>Now Serving Ticket Number: <span id="current_ticket"></span></h2>
-	<audio id="ticket_audio" controls></audio>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Queue Dashboard</title>
+		<!-- Link to the CSS file -->
+		<link rel="stylesheet" href="queue_dashboard.css" />
+	</head>
+	<body>
+		<div id="queue-dashboard" class="queue-dashboard">
+			<div id="now_serving" class="now-serving">
+				<h2>Now Serving Ticket Number: <span class="current_ticket">#12345</span></h2>
+				<audio class="ticket_audio" controls></audio>
+			</div>
+			<div id="queue_list" class="queue-list">
+				<h3>Queue Call Listkjdhfkshkfjs</h3>
+				<div class="queue-items">
+					<!-- Queue items will be dynamically added here -->
+				</div>
+			</div>
+		</div>
 
-<script>
-	frappe.realtime.on("queue_call", function (data) {
-		document.getElementById("current_ticket").innerText = data.ticket_number;
-		let audio = document.getElementById("ticket_audio");
-		audio.src = data.audio_file;
-		audio.play();
-	});
-</script>
+		<!-- Link to the JavaScript file -->
+		<script src="queue_dashboard.js"></script>
+	</body>
+</html>

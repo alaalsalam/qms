@@ -6,8 +6,8 @@ class Office(Document):
     pass
 
 @frappe.whitelist()
-def call_next(service, name):
-    next_ticket = frappe.get_all("Queue", filters={"service": service, "status": "Waiting"}, fields=["name", "ticket_number", "status"], order_by="creation asc", limit=1)
+def call_next(department, name):
+    next_ticket = frappe.get_all("Queue", filters={"department": department, "status": "Waiting"}, fields=["name", "ticket_number", "status"], order_by="creation asc", limit=1)
 
     if next_ticket:
         ticket = next_ticket[0]

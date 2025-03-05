@@ -1,0 +1,81 @@
+{
+ "app": "qms",
+ "charts": [],
+ "content": "[{\"id\":\"62NVy58GCm\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 16px;\\\">Shortcuts</span>\",\"col\":12}},{\"id\":\"VhYpiFI5Gk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Queue\",\"col\":3}},{\"id\":\"qPh0yHLF8A\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Queue List\",\"col\":3}},{\"id\":\"nTAKByXxCN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Department\",\"col\":3}},{\"id\":\"4gDyotGksc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Office\",\"col\":3}},{\"id\":\"5iqZ9QZ8bs\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"XBEh9iwWKq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Lists</b></span>\",\"col\":12}},{\"id\":\"s9X2QcKLsO\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Queue Lists\",\"col\":4}},{\"id\":\"CJ2qIgIg5P\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Departments\",\"col\":4}},{\"id\":\"BIsxEzK-ih\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Queue Calls\",\"col\":4}}]",
+ "creation": "2025-03-04 11:26:57.833843",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "All",
+ "hide_custom": 0,
+ "icon": "color-energy-points",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "QMS",
+ "link_type": "DocType",
+ "links": [],
+ "modified": "2025-03-05 09:44:20.183140",
+ "modified_by": "lijsamuael@gmail.com",
+ "module": "Queue Management System",
+ "name": "QMS",
+ "number_cards": [],
+ "owner": "lijsamuael@gmail.com",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Queue",
+   "label": "Queue Lists",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Departmennt",
+   "label": "Departments",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Queue Call",
+   "label": "Queue Calls",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 24.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Queue",
+   "link_to": "Queue",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Queue List",
+   "link_to": "Queue Call",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Department",
+   "link_to": "Departmennt",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Office",
+   "link_to": "Office",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "QMS",
+ "type": "Workspace"
+}

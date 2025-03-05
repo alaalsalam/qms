@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class ServiceHandling(Document):
+class Departmennt(Document):
 	pass

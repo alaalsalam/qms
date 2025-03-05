@@ -1,6 +1,30 @@
+Apologies for missing that! Here's the updated README with a project description added:
+
+---
+
 ### Queue Management System
 
-Queue Management System based on Frappe framework
+The Queue Management System (QMS) is an application built on the Frappe framework that helps manage queues in various departments. It allows real-time updates for users, ensuring smooth queue management and enhancing user experience. The system displays the list of queues for each department and plays an audio file whenever a queue is called. 
+
+#### Key Features:
+- **Real-time updates** for all users across the system.
+- **Queue management** for each department, displaying queues in real-time.
+- **Audio notifications** that play whenever a queue is called.
+- **Instant updates on screen** to show the latest changes without delay.
+
+#### Screenshots
+
+1. **Workspace**:
+   ![Workspace](https://github.com/user-attachments/assets/41890417-b695-46ce-981c-0ab3bd11dd83)
+
+2. **List of Queues in Each Department with Realtime Update**:
+   ![List of Queues](https://github.com/user-attachments/assets/e43ace16-1d29-4cdc-808c-e257c702701b)
+
+3. **Queue Call with Audio Attached**:
+   ![Queue Call](https://github.com/user-attachments/assets/fa74fef6-e7ab-41e8-817b-a7a9d93183cf)
+
+4. **Realtime Update on Screen  with additional Audio functionality**:
+   ![Realtime Update](https://github.com/user-attachments/assets/51491c58-db34-4e0b-88be-1eb4102333f3)
 
 ### Installation
 
@@ -27,14 +51,18 @@ Pre-commit is configured to use the following tools for checking and formatting 
 - eslint
 - prettier
 - pyupgrade
-### CI
+
+### Continuous Integration (CI)
 
 This app can use GitHub Actions for CI. The following workflows are configured:
 
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
+- CI: Installs this app and runs unit tests on every push to the `develop` branch.
 - Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
-
 
 ### License
 
-mit
+MIT
+
+---
+
+This README now includes a project description along with the relevant details about the features and functionality of the Queue Management System.

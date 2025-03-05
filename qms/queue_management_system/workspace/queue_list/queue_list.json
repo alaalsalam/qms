@@ -1,14 +1,9 @@
 {
  "app": "qms",
  "charts": [],
- "content": "[{\"id\":\"0qiNga7cY4\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Queue List\",\"col\":12}}]",
+ "content": "[]",
  "creation": "2025-03-01 12:28:16.518308",
- "custom_blocks": [
-  {
-   "custom_block_name": "Queue List",
-   "label": "Queue List"
-  }
- ],
+ "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
@@ -20,7 +15,7 @@
  "label": "Queue List",
  "link_type": "DocType",
  "links": [],
- "modified": "2025-03-01 12:35:26.578886",
+ "modified": "2025-03-04 11:25:46.457111",
  "modified_by": "lijsamuael@gmail.com",
  "module": "Queue Management System",
  "name": "Queue List",
@@ -31,7 +26,32 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 23.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "Queue",
+   "link_to": "Queue",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Queue List",
+   "link_to": "Queue Call",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Department",
+   "link_to": "Departmennt",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Office",
+   "link_to": "Office",
+   "type": "DocType"
+  }
+ ],
  "title": "Queue List",
  "type": "Workspace"
 }

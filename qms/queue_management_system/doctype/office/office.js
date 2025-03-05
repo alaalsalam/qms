@@ -7,7 +7,7 @@ frappe.ui.form.on("Office", {
 			method: "frappe.client.get_list",
 			args: {
 				doctype: "Queue",
-				filters: { service: frm.doc.service },
+				filters: { department: frm.doc.service },
 				fields: ["name", "status"],
 				order_by: "creation asc",
 				limit_page_length: 1,
@@ -29,7 +29,7 @@ frappe.ui.form.on("Office", {
 						frappe.call({
 							method: "qms.queue_management_system.doctype.office.office.call_next",
 							args: {
-								service: frm.doc.service,
+								department: frm.doc.service,
 								name: frm.doc.name,
 							},
 							callback: function (r) {

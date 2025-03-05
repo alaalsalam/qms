@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-05 10:13:01.907282",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "html_ujvh",
+  "section_break_iswe",
+  "name1",
+  "office_number",
+  "column_break_ezyf",
+  "parent_department",
+  "is_parent"
+ ],
+ "fields": [
+  {
+   "fieldname": "html_ujvh",
+   "fieldtype": "HTML",
+   "options": "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css\">\n\n<div class=\"container mt-4\">\n    <h2 class=\"mb-3 text-center\">Queue List</h2>\n    <table class=\"table table-bordered table-hover shadow-sm\">\n        <thead class=\"table-dark text-center\">\n            <tr>\n                <th>Ticket #</th>\n                <th>Department</th>\n                <th>Priority</th>\n                <th>Status</th>\n                <th>Date</th>\n                <th>Action</th>\n            </tr>\n        </thead>\n        <tbody id=\"queue-table-body\"></tbody>\n    </table>\n</div>\n\n<script>\nfunction fetchQueueList() {\n    frappe.call({\n        method: \"qms.queue_management_system.doctype.queue.queue.get_queue_list\",\n        args: { department: cur_frm.doc.name },\n        callback: function(response) {\n            if (response.message) {\n                console.log(\"Queue List Response:\", response.message);\n                const queueTableBody = document.getElementById(\"queue-table-body\");\n                queueTableBody.innerHTML = \"\";\n\n                response.message.forEach(queue => {\n                    const row = document.createElement(\"tr\");\n                    row.setAttribute(\"data-ticket\", queue.ticket_number);\n                    row.innerHTML = getQueueRowHTML(queue);\n                    queueTableBody.appendChild(row);\n                });\n            }\n        }\n    });\n}\n\n// Listen for real-time queue updates\nfrappe.realtime.on(\"queue\", function(data) {\n    console.log(\"Real-time queue update received:\", data);\n    \n    // Clear the queue table\n    const queueTableBody = document.getElementById(\"queue-table-body\");\n    queueTableBody.innerHTML = \"\";\n\n    // Fetch the latest queue list\n    fetchQueueList();\n});\n\n// Function to generate HTML for a queue row\nfunction getQueueRowHTML(queue) {\n    return `\n        <td class=\"text-center fw-bold\">${queue.ticket_number}</td>\n        <td class=\"text-center\">${queue.department}</td>\n        <td class=\"text-center\">\n            <span class=\"badge border border-secondary p-2\">\n                <i class=\"fa-solid fa-exclamation-circle\"></i> ${queue.priority}\n            </span>\n        </td>\n        <td class=\"text-center queue-status\">\n            <span class=\"badge border border-secondary p-2\">\n                <i class=\"fa-solid fa-circle\"></i> ${queue.status}\n            </span>\n        </td>\n        <td class=\"text-center\">${frappe.datetime.str_to_user(queue.date)}</td>\n        <td class=\"text-center d-flex justify-content-center gap-2 action-buttons\">\n            ${getActionButtons(queue.name, queue.status)}\n        </td>\n    `;\n}\n\n// Generate Action Buttons Based on Status\nfunction getActionButtons(ticketNumber, status) {\n    const buttons = {\n        \"waiting\": [\n            { name: \"call\", icon: \"fa-phone\", color: \"btn-outline-primary\" }\n        ],\n        \"skipped\": [\n            { name: \"start\", icon: \"fa-play\", color: \"btn-outline-info\" }\n        ],\n        \"called\": [\n            { name: \"skip\", icon: \"fa-forward\", color: \"btn-outline-warning\" },\n            { name: \"start\", icon: \"fa-play\", color: \"btn-outline-info\" }\n        ],\n        \"being served\": [\n            { name: \"complete\", icon: \"fa-check\", color: \"btn-outline-success\" },\n            { name: \"transfer\", icon: \"fa-exchange-alt\", color: \"btn-outline-danger\" }\n        ]\n    };\n\n    const actions = buttons[status.toLowerCase()] || [];\n    return actions.map(action =>\n        `<button class=\"btn ${action.color} btn-sm\" onclick=\"${action.name === 'complete' \n            ? `promptForRemarkAndHandleAction('${action.name}', '${ticketNumber}')` \n            : `handleAction('${action.name}', '${ticketNumber}', 'None')`\n        }\">\n            <i class=\"fa ${action.icon}\"></i>\n        </button>`\n    ).join('');\n}\n\n// Prompt for remark using Frappe UI\nfunction promptForRemarkAndHandleAction(action, ticketNumber) {\n    frappe.prompt([\n        {\n            label: 'Remark',\n            fieldname: 'remark',\n            fieldtype: 'Small Text',\n            reqd: 1\n        }\n    ],\n    function(values) {\n        handleAction(action, ticketNumber, values.remark);\n    },\n    'Enter Remark',\n    'Submit');\n}\n\n// Handle Actions\nfunction handleAction(action, ticketNumber, remark) {\n    console.log({ ticketNumber, remark });\n    frappe.call({\n        method: \"qms.queue_management_system.doctype.queue.queue.handle_action\",\n        args: { action: action, ticket_number: ticketNumber, remark: remark || \"None\" },\n        callback: function(response) {\n            console.log(\"response\", response);\n            frappe.msgprint(`Action '${action}' executed successfully for Ticket #${ticketNumber}`);\n        }\n    });\n}\n\n// Fetch queue list on page load\nfetchQueueList();\n</script>\n"
+  },
+  {
+   "fieldname": "section_break_iswe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "office_number",
+   "fieldtype": "Data",
+   "label": "Office number"
+  },
+  {
+   "fieldname": "column_break_ezyf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parent_department",
+   "fieldtype": "Link",
+   "label": "Parent department",
+   "options": "Departmennt"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_parent",
+   "fieldtype": "Check",
+   "label": "Is parent"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-05 10:14:36.834343",
+ "modified_by": "Administrator",
+ "module": "Queue Management System",
+ "name": "Departmennt",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

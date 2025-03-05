@@ -11,7 +11,7 @@
   "number_of_calls",
   "column_break_ryjh",
   "audio_file",
-  "assigned_office"
+  "department"
  ],
  "fields": [
   {
@@ -35,20 +35,20 @@
    "label": "Audio file"
   },
   {
-   "fieldname": "assigned_office",
-   "fieldtype": "Link",
-   "label": "Assigned Office",
-   "options": "Office"
-  },
-  {
    "fieldname": "number_of_calls",
    "fieldtype": "Int",
    "label": "Number of calls"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Departmennt"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-03 09:35:38.268241",
+ "modified": "2025-03-04 17:39:28.783768",
  "modified_by": "Administrator",
  "module": "Queue Management System",
  "name": "Queue Call",

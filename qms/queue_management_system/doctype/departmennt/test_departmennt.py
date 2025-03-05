@@ -12,18 +12,18 @@ EXTRA_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 IGNORE_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 
 
-class UnitTestServiceHandling(UnitTestCase):
+class UnitTestDepartmennt(UnitTestCase):
 	"""
-	Unit tests for ServiceHandling.
+	Unit tests for Departmennt.
 	Use this class for testing individual functions and methods.
 	"""
 
 	pass
 
 
-class IntegrationTestServiceHandling(IntegrationTestCase):
+class IntegrationTestDepartmennt(IntegrationTestCase):
 	"""
-	Integration tests for ServiceHandling.
+	Integration tests for Departmennt.
 	Use this class for testing interactions between multiple components.
 	"""
 
