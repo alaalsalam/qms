@@ -94,6 +94,8 @@ def handle_action(action, ticket_number, remark):
         return start(ticket_number)
     elif action == "complete":
         return complete(ticket_number, remark)
+    elif action == "transfer":
+        return transfer(ticket_number, remark)
 
 @frappe.whitelist()
 def call(department, name):
@@ -211,6 +213,9 @@ def skip(ticket_number):
     )
 
 
+
+
+
 @frappe.whitelist()
 def start(ticket_number):
     ticket = frappe.get_doc("Queue", ticket_number)
@@ -256,3 +261,25 @@ def complete(ticket_name, remark):
     },
     )
 
+
+@frappe.whitelist()
+def transfer(ticket_number, remark):
+    ticket = frappe.get_doc("Queue", ticket_number)
+
+    # Update the department to Transferred
+    ticket.department = remark
+    ticket.save()
+
+
+    frappe.publish_realtime(
+        event="queue",
+        message={
+            "name": ticket.name,
+            "ticket_number": ticket.ticket_number,
+            "department": ticket.department,
+            "priority": ticket.priority,
+            "status": ticket.status,
+            "date": ticket.date,
+    },
+    )
+    return ticket
